@@ -22,6 +22,7 @@ namespace FSI.Ecommerce.Service.Services
                 Id = user.Id,
                 Username = user.Username,
                 Password = user.Password,
+                IdProfile = user.IdProfile,
                 DateInsert = user.DateInsert,
                 DateUpdate = user.DateUpdate,
                 Status = user.Status
@@ -121,23 +122,10 @@ namespace FSI.Ecommerce.Service.Services
                 Id = userEntity.Id,
                 Username = userEntity.Username,
                 Password = userEntity.Password,
+                IdProfile = userEntity.IdProfile,   
                 DateInsert = userEntity.DateInsert,
                 DateUpdate = userEntity.DateUpdate,
                 Status = userEntity.Status
-            };
-        }
-
-        // Mapeia de UserDto para UserEntity
-        private UserEntity SetUserEntity(UserDto userDto)
-        {
-            return new UserEntity
-            {
-                Id = userDto.Id,
-                Username = userDto.Username,
-                Password = userDto.Password,
-                DateInsert = userDto.DateInsert,
-                DateUpdate = userDto.DateUpdate,
-                Status = userDto.Status
             };
         }
 
@@ -148,6 +136,7 @@ namespace FSI.Ecommerce.Service.Services
             {
                 Username = userDto.Username,
                 Password = userDto.Password,
+                IdProfile = userDto.IdProfile,
                 DateInsert = DateTime.Now,
                 DateUpdate = DateTime.Now,
                 Status = userDto.Status
@@ -159,6 +148,7 @@ namespace FSI.Ecommerce.Service.Services
         {
             existingEntity.Username = userDto.Username;
             existingEntity.Password = userDto.Password;
+            existingEntity.IdProfile = userDto.IdProfile;
             existingEntity.DateUpdate = DateTime.Now;
             existingEntity.Status = userDto.Status;
             return existingEntity;

@@ -4,6 +4,7 @@ using FSI.Ecommerce.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FSI.Ecommerce.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241224163223_AddTableProductInCategoryAjust")]
+    partial class AddTableProductInCategoryAjust
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,71 +56,6 @@ namespace FSI.Ecommerce.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ecommerce_Categories");
-                });
-
-            modelBuilder.Entity("FSI.Ecommerce.Domain.Entities.CommandEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("DateInsert")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateUpdate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Ecommerce_Commands");
-                });
-
-            modelBuilder.Entity("FSI.Ecommerce.Domain.Entities.OrderEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("DateInsert")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateUpdate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Discount")
-                        .HasColumnType("float");
-
-                    b.Property<int>("IdCommand")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdProduct")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<double>("ValueFor")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ValueOf")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Ecommerce_Orders");
                 });
 
             modelBuilder.Entity("FSI.Ecommerce.Domain.Entities.ProductEntity", b =>

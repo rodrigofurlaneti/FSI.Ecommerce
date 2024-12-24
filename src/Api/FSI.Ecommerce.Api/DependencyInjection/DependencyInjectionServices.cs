@@ -8,6 +8,10 @@ namespace FSI.Ecommerce.Api.DependencyInjection
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             // Registro de serviços específicos
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICommandService, CommandService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IUserService, UserService>();
 

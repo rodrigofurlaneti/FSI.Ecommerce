@@ -11,6 +11,10 @@ namespace FSI.Ecommerce.Api.DependencyInjection
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 
             // Registro de repositórios específicos
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICommandRepository, CommandRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProfileRepository, ProfileRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
 
