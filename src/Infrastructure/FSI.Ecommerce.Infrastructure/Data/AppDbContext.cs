@@ -10,5 +10,6 @@ namespace FSI.Ecommerce.Infrastructure.Data
         }
 
         public DbSet<UserEntity> Ecommerce_Users { get; set; } = null!;
+        public DbSet<ProfileEntity> Ecommerce_Profiles { get; set; } = null!;
     }
 }

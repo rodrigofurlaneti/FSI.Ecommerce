@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using FSI.Ecommerce.Infrastructure.Data;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.EntityFrameworkCore;
 
 namespace FSI.Ecommerce.Api
@@ -24,7 +23,7 @@ namespace FSI.Ecommerce.Api
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            DependencyInjection.RegisterServices(services);
+            FSI.Ecommerce.Api.DependencyInjection.DependencyInjection.RegisterServices(services);
 
             services.ConfigureSwagger();
             services.AddControllers();
