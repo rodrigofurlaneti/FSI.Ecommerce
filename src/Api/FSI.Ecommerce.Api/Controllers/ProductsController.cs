@@ -6,11 +6,11 @@ namespace FSI.Ecommerce.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProfilesController : ControllerBase
+    public class ProductsController : ControllerBase
     {
-        private readonly IProfileService _service;
+        private readonly IProductService _service;
 
-        public ProfilesController(IProfileService service)
+        public ProductsController(IProductService service)
         {
             _service = service;
         }
@@ -18,28 +18,28 @@ namespace FSI.Ecommerce.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var profiles = await _service.GetAllAsync();
-            return Ok(profiles);
+            var products = await _service.GetAllAsync();
+            return Ok(products);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var profileDto = await _service.GetByIdAsync(id);
-            return Ok(profileDto);
+            var productDto = await _service.GetByIdAsync(id);
+            return Ok(productDto);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(ProfileDto profileDto)
+        public async Task<IActionResult> Add(ProductDto productDto)
         {
-            await _service.AddAsync(profileDto);
-            return CreatedAtAction(nameof(GetById), new { id = profileDto.Id }, profileDto);
+            await _service.AddAsync(productDto);
+            return CreatedAtAction(nameof(GetById), new { id = productDto.Id }, productDto);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, ProfileDto profileDto)
+        public async Task<IActionResult> Update(int id, ProductDto productDto)
         {
-            await _service.UpdateAsync(id, profileDto);
+            await _service.UpdateAsync(id, productDto);
             return NoContent();
         }
 
