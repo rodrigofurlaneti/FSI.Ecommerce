@@ -1,9 +1,8 @@
-﻿namespace FSI.Ecommerce.Service.Dtos
+﻿using FSI.Ecommerce.Domain.Entities;
+
+namespace FSI.Ecommerce.Service.Dtos
 {
-    public class UserDto : Base
+    public class UserDto : UserEntity
     {
-        public string Username { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-        public int IdProfile { get; set; } = 0;
     }
 }

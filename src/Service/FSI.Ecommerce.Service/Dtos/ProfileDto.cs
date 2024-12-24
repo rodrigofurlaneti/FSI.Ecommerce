@@ -1,8 +1,8 @@
-﻿namespace FSI.Ecommerce.Service.Dtos
+﻿using FSI.Ecommerce.Domain.Entities;
+
+namespace FSI.Ecommerce.Service.Dtos
 {
-    public class ProfileDto : Base
+    public class ProfileDto : ProfileEntity
     {
-        public string Name { get; set; } = string.Empty;
-        public string Picture { get; set; } = string.Empty;
     }
 }
