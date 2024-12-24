@@ -363,3 +363,12 @@ MigrationBackup/
 FodyWeavers.xsd
 /src/Api/FSI.Ecommerce.Api/obj/Debug/net6.0/FSI.Ecommerce.Api.assets.cache
 /src/Api/FSI.Ecommerce.Api/obj/Debug/net6.0/FSI.Ecommerce.Api.assets.cache
+
+
+/src/Api/FSI.Ecommerce.Api/obj/Debug/net6.0/FSI.Ecommerce.Api.AssemblyInfo.cs
+/src/Api/FSI.Ecommerce.Api/obj/Debug/net6.0/FSI.Ecommerce.Api.AssemblyInfoInputs.cache
+/src/Api/FSI.Ecommerce.Api/obj/Debug/net6.0/FSI.Ecommerce.Api.csproj.AssemblyReference.cache
+/src/Api/FSI.Ecommerce.Api/obj/Debug/net6.0/FSI.Ecommerce.Api.GeneratedMSBuildEditorConfig.editorconfig
+/src/Api/FSI.Ecommerce.Api/obj/FSI.Ecommerce.Api.csproj.nuget.dgspec.json
+/src/Api/FSI.Ecommerce.Api/obj/project.assets.json
+/src/Api/FSI.Ecommerce.Api/obj/project.nuget.cache
