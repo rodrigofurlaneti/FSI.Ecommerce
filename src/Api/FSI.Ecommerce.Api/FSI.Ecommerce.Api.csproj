@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.16" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\FSI.Ecommerce.Domain\FSI.Ecommerce.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\FSI.Ecommerce.Infrastructure\FSI.Ecommerce.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Service\FSI.Ecommerce.Service\FSI.Ecommerce.Service.csproj" />
+  </ItemGroup>
+
+</Project>

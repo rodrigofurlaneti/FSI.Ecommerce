@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/FSI.Ecommerce/CopilotIndices/17.12.38.29086
+/src/Domain/FSI.Ecommerce.Domain/obj
+/src/Infrastructure/FSI.Ecommerce.Infrastructure/obj
+/src/Service/FSI.Ecommerce.Service/obj
