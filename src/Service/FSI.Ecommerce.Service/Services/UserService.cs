@@ -21,6 +21,7 @@ namespace FSI.Ecommerce.Service.Services
             {
                 Id = user.Id,
                 Username = user.Username,
+                Email = user.Email,
                 Password = user.Password,
                 IdProfile = user.IdProfile,
                 DateInsert = user.DateInsert,
@@ -121,6 +122,7 @@ namespace FSI.Ecommerce.Service.Services
             {
                 Id = userEntity.Id,
                 Username = userEntity.Username,
+                Email = userEntity.Email,
                 Password = userEntity.Password,
                 IdProfile = userEntity.IdProfile,   
                 DateInsert = userEntity.DateInsert,
@@ -136,6 +138,7 @@ namespace FSI.Ecommerce.Service.Services
             {
                 Username = userDto.Username,
                 Password = userDto.Password,
+                Email = userDto.Email,
                 IdProfile = userDto.IdProfile,
                 DateInsert = DateTime.Now,
                 DateUpdate = DateTime.Now,
@@ -148,6 +151,7 @@ namespace FSI.Ecommerce.Service.Services
         {
             existingEntity.Username = userDto.Username;
             existingEntity.Password = userDto.Password;
+            existingEntity.Email = userDto.Email;
             existingEntity.IdProfile = userDto.IdProfile;
             existingEntity.DateUpdate = DateTime.Now;
             existingEntity.Status = userDto.Status;

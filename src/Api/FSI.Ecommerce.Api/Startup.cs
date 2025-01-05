@@ -26,6 +26,16 @@ namespace FSI.Ecommerce.Api
             FSI.Ecommerce.Api.DependencyInjection.DependencyInjection.RegisterServices(services);
 
             services.ConfigureSwagger();
+
+            // Configuração do CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader());
+            });
+
             services.AddControllers();
         }
 
@@ -41,6 +51,9 @@ namespace FSI.Ecommerce.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FSI Ecommerce API v1"));
             }
+
+                // Aplica a política de CORS antes do roteamento
+    app.UseCors("AllowAll");
 
             app.UseHttpsRedirection();
             app.UseRouting();

@@ -15,14 +15,56 @@ namespace FSI.Ecommerce.Api.Controllers
         }
 
         [HttpPost("api/Authenticate")]
-        public async Task<IActionResult> Authenticate(AuthenticationRequestDto userDto)
+        public async Task<IActionResult> Authenticate([FromBody] AuthenticationRequestDto userDto)
         {
-            var token = await _service.AuthenticationAsync(userDto);
+            var validadeRequest = ValidateRequest(userDto);
 
-            if (token.IsAuthentication)
-                return Ok(new { token });
+            if (validadeRequest)
+            {
+                var token = await _service.AuthenticationAsync(userDto);
+
+                if (token.IsAuthentication)
+                    return Ok(new { token });
+                else
+                    return Unauthorized(new { token });
+            }
             else
-                return Unauthorized(new { token });
+            {
+                return Unauthorized("Username or password invalid");
+            }
         }
+
+        #region ValidadeRequest
+
+        private bool ValidateRequest(AuthenticationRequestDto userDto)
+        {
+            if (userDto != null)
+            {
+                if (userDto.Username != null && userDto.Username != string.Empty)
+                {
+                    if (userDto.Password != null && userDto.Password != string.Empty)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        //"Property password to resquest null and empty";
+                        return false;
+                    }
+                }
+                else
+                {
+                    //"Property username to resquest null and empty";
+                    return false;
+                }
+            }
+            else
+            {
+                //Object resquest null
+                return false;
+            }
+        }
+
+        #endregion
     }
 }
